@@ -1,0 +1,17 @@
+<div>
+    <div>
+        <h2>
+            Profile
+        </h2>
+    
+        <button (click)="logout()">
+            Logout
+        </button>
+    </div>
+
+    <hr>
+    <img [src]="IDToken.picture" [alt]="IDToken.name">
+    <hr>
+    <p>Nombre: <strong> {{ IDToken.name }} </strong> </p>
+    <p>Email: <strong> {{ IDToken.email }} </strong> </p>
+</div>
