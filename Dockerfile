@@ -18,8 +18,6 @@ RUN ng build --optimization
 
 FROM nginx:alpine
 
-WORKDIR $ROOT
-
 COPY --from=builder /app/dist/auth-example/ /usr/share/nginx/html
 
 COPY ./compose/nginx/default.conf /etc/nginx/conf.d/
