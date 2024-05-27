@@ -40,18 +40,18 @@ export class HomeComponent implements OnInit {
   ) {
     
   }
-
+  
   ngOnInit(): void {
     this.getIDToken();
   }
 
-  getIDToken() {
+  getIDToken(): void {
     this.TokenString = this.stg.get_item<string>('id_token');
     this.IDToken = this.stg.get_id_token() || this.IDToken;
   }
 
-  logout() {
+  logout(): void {
     this.auth.logOut();
-    this.router.navigate(['/login'])
+    this.router.navigate(['/login']);
   }
 }

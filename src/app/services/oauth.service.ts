@@ -51,7 +51,7 @@ export class OauthService {
         return this.generateURL(this.randomString, this.codeChallenge)
     }
 
-    private genRandomString(len: number) {
+    private genRandomString(len: number): string {
         let result = '';
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         const charactersLength = characters.length;
@@ -63,7 +63,7 @@ export class OauthService {
         return result;
     }
 
-    private hashKeyWebSafe(str: string) {
+    private hashKeyWebSafe(str: string): string {
         return CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(str))
           .replace(/\//g, '_')
           .replace(/\+/g, '-')

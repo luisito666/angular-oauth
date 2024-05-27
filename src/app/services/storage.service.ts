@@ -13,11 +13,11 @@ export class LocalStorageService {
         private jwt: JwtHelperService
     ) {}
 
-    set_token(token: string) {
+    set_token(token: string): void {
         localStorage.setItem('token', JSON.stringify(token));
     }
 
-    set_id_token(token: string) {
+    set_id_token(token: string): void {
         localStorage.setItem('id_token', JSON.stringify(token));
     }
 
@@ -53,11 +53,11 @@ export class LocalStorageService {
         return undefined
     }
 
-    delete_token() {
+    delete_token(): void {
         localStorage.removeItem('token');
     }
 
-    set_item(item_name: string, item: any) {
+    set_item(item_name: string, item: any): void {
         localStorage.setItem(item_name, JSON.stringify(item));
     }
 
@@ -65,7 +65,7 @@ export class LocalStorageService {
         return <T>JSON.parse(localStorage.getItem(item_name) || '');
     }
 
-    delete_item(item_name: string) {
+    delete_item(item_name: string): void {
         localStorage.removeItem(item_name);
     }
 

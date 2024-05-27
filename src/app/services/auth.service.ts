@@ -20,7 +20,7 @@ export class AuthService {
         return !isTokenExpired;
     }
 
-    logOut() {
+    logOut(): void {
         this.stg.delete_token();
         this.stg.delete_item('id_token');
     }

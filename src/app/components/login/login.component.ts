@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
     private oauth: OauthService
   ) {}
   
-  ngOnInit() {
+  ngOnInit(): void {
     this.url = this.oauth.generateLoginURL()
   }
 
